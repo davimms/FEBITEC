@@ -212,5 +212,5 @@
         <!-- Core theme JS-->
         <script src="js/scripts.js"></script>
     </body>
-    <br>
+    O Davi é mto maneiro
 </html>
