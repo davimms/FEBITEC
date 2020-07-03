@@ -212,4 +212,5 @@
         <!-- Core theme JS-->
         <script src="js/scripts.js"></script>
     </body>
+    <br>
 </html>
