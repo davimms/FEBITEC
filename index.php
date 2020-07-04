@@ -1,3 +1,6 @@
+<?php
+    session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -38,10 +41,10 @@
                                 <a class="dropdown-item nav-link" href="index.html">2ª FEBITEC</a>
                             </div>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link" data-toggle="modal" data-dismiss="modal" href="#login">Login <i class="fa fa-user-circle" aria-hidden="true"></i></a>
-                        </li>
                         <li class="nav-item dropdown">
+                        <?php
+                            if(isset($_SESSION['usuario'] )){
+                        ?>      
                             <a class="nav-link dropdown-toggle" data-toggle="dropdown" data-target="dropdown_target">
                                 Login <i class="fa fa-user-circle" aria-hidden="true"></i>
                                 <span class="caret"></span>
@@ -50,7 +53,15 @@
                                 <a class="dropdown-item nav-link">Sair</a>
                                 <a class="dropdown-item nav-link" href="user/aluno-inicio.html">Área do usuário</a>
                             </div>
-                        </li>                
+                        </li>      
+                        <?php
+                            }else{
+                        ?>
+                            <a class="nav-link" href="login.html">Login <i class="fa fa-user-circle" aria-hidden="true"></i></a>
+                        <?php
+                        }
+                        ?>          
+                        </li>           
                     </ul>
                 </div>
             </div>
@@ -173,34 +184,6 @@
                 </div>
             </div>
         </div>
-        <!-- Modal 3-->
-        <!-- Login-->
-        <div class="portfolio-modal modal fade" id="login" tabindex="-1" role="dialog" aria-hidden="true">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="close-modal" data-dismiss="modal"><img src="assets/img/close-icon.svg" alt="Close modal" /></div>
-                    <div class="container">
-                        <div class="row justify-content-center">
-                            <div class="col-lg-8">
-                                <div class="modal-body">
-                                    <!-- Project Details Go Here-->
-                                    <h2 class="text-uppercase">Login</h2>
-                                    <img class="img-fluid d-block mx-auto" src="assets/img/portfolio/03-full.jpg" alt="" />
-                                    <form method="post" action="php/login/login.php">
-                                        <input type="email" id="login" class="fadeIn second" size="25" name="form_email" placeholder="Email"><br><br>
-                                        <input type="password" id="password" class="fadeIn third" size="25" name="form_pass" placeholder="Senha"><br><br>
-                                        <input type="submit" class="btn btn-secondary" value="Entrar"><br><br>
-                                    </form>
-                                    <p class="item-intro text-muted"><a style="color: grey" href="#login">Esqueceu a senha? Clique aqui</a></p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        
-        
         <!-- Bootstrap core JS-->
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.bundle.min.js"></script>
